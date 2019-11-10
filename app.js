@@ -1,11 +1,9 @@
-currentPage=0;
+currentPage = 0;
 
-
-const url = "http://shubham-zvbj.localhost.run/";
+const url = "https://shubham-zvbj.localhost.run/";
 
 // Unit101
 $(document).ready(function() {
-  
   if (new URL(window.location.href).searchParams.get("id") !== null) {
     console.log("sa");
     $("#search-component").val(
@@ -16,7 +14,6 @@ $(document).ready(function() {
       getJSON();
     }, 300);
   }
-
 });
 
 function getJSON() {
@@ -90,7 +87,6 @@ function addZ(n) {
 }
 
 function getTableData(index) {
-
   $.get(url + "getBulkData?bulkid=" + index, function(data) {
     if (data.message == "ok") {
       console.log(data);
@@ -102,16 +98,15 @@ function getTableData(index) {
 }
 
 function setTableData(data) {
-  $('#table-body').html("");
+  $("#table-body").html("");
   console.log(data.result[0].full_index.split("__")[1]);
   console.log(data.result[0].full_index.split("__")[0]);
 
   for (let i = 0; i < data.result.length; i++) {
-
     let cleaningColumns = data.result[i].full_index.split("__")[0].split(",");
     let coatingColumns = data.result[i].full_index.split("__")[1].split(",");
     let quality = data.result[i].defective == false ? "Good" : "Bad";
-    let label= quality=="Good"? "success" : "danger";
+    let label = quality == "Good" ? "success" : "danger";
 
     let block =
       "<tr><td>" +
@@ -120,7 +115,9 @@ function setTableData(data) {
       data.result[i].batch_num +
       "</td><td>" +
       data.result[i].timestamp +
-      '</td><td><label class="badge badge-'+label+'">' +
+      '</td><td><label class="badge badge-' +
+      label +
+      '">' +
       quality +
       "</label></td>" +
       "<td>" +
@@ -153,7 +150,9 @@ function setTableData(data) {
       "<td>" +
       coatingColumns[4].replace("Height ", "") +
       "</td>" +
-      "<td><button id='"+ data.result[i].unitid +"'class='btn btn-link' onclick='fullAnalysis(this)'>Link</button></td>" +
+      "<td><button id='" +
+      data.result[i].unitid +
+      "'class='btn btn-link' onclick='fullAnalysis(this)'>Link</button></td>" +
       "</tr>";
 
     $("#table-body").append(block);
@@ -161,22 +160,15 @@ function setTableData(data) {
 }
 
 function fullAnalysis(id) {
-
-  window.location.href="../../index.html?id="+id.id
- 
+  window.location.href = "../../index.html?id=" + id.id;
 }
 
-function nextPageTable()
-{
-  if(currentPage==199) return;
-  else
-  getTableData(++currentPage);
+function nextPageTable() {
+  if (currentPage == 199) return;
+  else getTableData(++currentPage);
 }
 
-function previousPageTable()
-{
-  if(currentPage==0) return;
-  else
-  getTableData(--currentPage);
-
+function previousPageTable() {
+  if (currentPage == 0) return;
+  else getTableData(--currentPage);
 }

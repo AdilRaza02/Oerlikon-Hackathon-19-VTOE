@@ -1,5 +1,5 @@
 $(function() {
-  const url = "http://shubham-zvbj.localhost.run/";
+  const url = "https://shubham-zvbj.localhost.run/";
 
   $.get(url + "getGraphData", function(graphData) {
     if (graphData.message == "ok") {
