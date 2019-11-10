@@ -128,6 +128,18 @@ $(function() {
                 beginAtZero: true
               }
             }
+          ],   xAxes: [
+            
+            {
+              scaleLabel: {
+                display: true,
+                labelString: 'Time (Hours)',
+                fontSize: '16'
+              },
+              ticks: {
+                beginAtZero: true
+              }
+            }
           ]
         },
         legend: {
@@ -139,6 +151,85 @@ $(function() {
           }
         }
       };
+
+
+      var options2 = {
+        scales: {
+          yAxes: [
+            
+            {
+              scaleLabel: {
+                display: true,
+                labelString: '# of faults detected',
+                fontSize: '16'
+              },
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ],   xAxes: [
+            
+            {
+              scaleLabel: {
+                display: true,
+                labelString: 'Stack Level',
+                fontSize: '16'
+              },
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        },
+        legend: {
+          display: false
+        },
+        elements: {
+          point: {
+            radius: 5
+          }
+        }
+      };
+
+      var options3 = {
+        scales: {
+          yAxes: [
+            
+            {
+              scaleLabel: {
+                display: true,
+                labelString: '# of faults detected',
+                fontSize: '16'
+              },
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ],   xAxes: [
+            
+            {
+              scaleLabel: {
+                display: true,
+                labelString: 'Rotater Level',
+                fontSize: '16'
+              },
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        },
+        legend: {
+          display: false
+        },
+        elements: {
+          point: {
+            radius: 5
+          }
+        }
+      };
+
+
       var doughnutPieData = {
         datasets: [
           {
@@ -210,7 +301,7 @@ $(function() {
         var barChart = new Chart(barChartCanvas, {
           type: "bar",
           data: barData,
-          options: options
+          options: options3
         });
       }
 
@@ -222,7 +313,7 @@ $(function() {
         var barChart = new Chart(barChartCanvas, {
           type: "bar",
           data: barData2,
-          options: options
+          options: options2
         });
       }
 

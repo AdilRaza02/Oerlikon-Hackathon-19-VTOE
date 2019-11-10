@@ -164,11 +164,19 @@ function fullAnalysis(id) {
 }
 
 function nextPageTable() {
-  if (currentPage == 199) return;
-  else getTableData(++currentPage);
+  if (currentPage == 199) {
+    return;
+  } else {
+    getTableData(++currentPage);
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+  }
 }
 
 function previousPageTable() {
-  if (currentPage == 0) return;
-  else getTableData(--currentPage);
+  if (currentPage == 0) {
+    return;
+  } else {
+    getTableData(--currentPage);
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+  }
 }
