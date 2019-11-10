@@ -1,0 +1,64 @@
+{
+    "partType": "screw",
+    "defective": false,
+    "full_index": "stack 110, Bucket 2, Row 2, Column 0__Rotator 36, Cylinder 8, Pipe 2, Height 2",
+    "full_position": "high__low",
+    "stages": [
+        {
+            "stageNum": 0,
+            "stageName": "Goods receipt",
+            "timestamp": 1573326220,
+            "index": null,
+            "position": null
+        },
+        {
+            "stageNum": 1,
+            "stageName": "Laying-up",
+            "timestamp": 1573326230,
+            "index": "stack 110, Bucket 2, Row 2, Column 0",
+            "position": "high"
+        },
+        {
+            "stageNum": 2,
+            "stageName": "Cleaning",
+            "timestamp": 1573326240,
+            "index": "stack 110, Bucket 2, Row 2, Column 0",
+            "position": "high"
+        },
+        {
+            "stageNum": 3,
+            "stageName": "Batch loading",
+            "timestamp": 1573326250,
+            "index": "Rotator 36, Cylinder 8, Pipe 2, Height 2",
+            "position": "low"
+        },
+        {
+            "stageNum": 4,
+            "stageName": "Coating treatment",
+            "timestamp": 1573326260,
+            "index": "Rotator 36, Cylinder 8, Pipe 2, Height 2",
+            "position": "low"
+        },
+        {
+            "stageNum": 5,
+            "stageName": "Post-treatment",
+            "timestamp": 1573326270,
+            "index": null,
+            "position": null
+        },
+        {
+            "stageNum": 6,
+            "stageName": "Testing",
+            "timestamp": 1573326280,
+            "index": null,
+            "position": null
+        },
+        {
+            "stageNum": 7,
+            "stageName": "Packaging",
+            "timestamp": 1573326290,
+            "index": null,
+            "position": null
+        }
+    ]
+}
